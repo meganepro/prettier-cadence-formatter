@@ -1,0 +1,77 @@
+{
+  "publisher": "meganepro",
+  "name": "prettier-cadence-formatter",
+  "displayName": "Prettier - Cadence Formatter",
+  "description": "Format Cadence code using the Prettier formatter.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "keywords": [
+    "pretteir",
+    "Cadence",
+    "formatter"
+  ],
+  "activationEvents": [
+    "onCommand:prettier-cadence-formatter.helloworld"
+  ],
+  "main": "./dist/extension.js",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/meganepro/prettier-cadence-formatter"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "prettier-cadence-formatter.helloWorld",
+        "title": "Hello World"
+      }
+    ],
+    "languages": [
+      {
+        "id": "cadence",
+        "aliases": [
+          "Cadence"
+        ],
+        "extensions": [
+          ".cdc"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/prettier": "^2.7.2",
+    "@types/vscode": "^1.75.0",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "@vscode/test-electron": "^2.2.3",
+    "eslint": "^8.34.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "prettier": "^2.8.4",
+    "prettier-plugin-cadence": "github:meganepro/prettier-plugin-cadence"
+  }
+}
